@@ -12,7 +12,7 @@ export class PlayerService {
   }
 
   findByTeamId(teamId: string) {
-    return this.players.find((player) => player.teamId === teamId);
+    return this.players.filter((player) => player.teamId === teamId);
   }
 
   add(player: typeof players[0]) {

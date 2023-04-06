@@ -1,8 +1,8 @@
 import { ApolloServer, gql } from "apollo-server";
 import { typeDefs } from "./schema";
 import { resolvers } from "./resolvers";
-import { users } from "./mock/user";
-import { rooms } from "./mock/room";
+import { teams } from "./mock/teams";
+import { players } from "./mock/players";
 import { messages } from "./mock/messages";
 
 const server = new ApolloServer({
@@ -10,9 +10,8 @@ const server = new ApolloServer({
   resolvers,
   context: () => {
     return {
-      users,
-      rooms,
-      messages,
+      teams,
+      players,
     };
   },
 });

@@ -3,6 +3,7 @@ import { gql } from "apollo-server";
 export const typeDefs = gql`
   type Query {
     teams: [Team]
+    team: Team
   }
 
   type Team {
@@ -20,5 +21,12 @@ export const typeDefs = gql`
     no: String
     position: String
     team: Team
+  }
+
+  input PlayerAddingInput {
+    name: String!
+    no: String
+    position: String
+    teamId: ID!
   }
 `;
